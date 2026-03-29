@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Combat Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="header-container">
+    <h1>⚔️ Combat Tracker</h1>
+    <p class="subtitle">Adicione os personagens à batalha:</p>
+    
+    <div class="form-container">
+    <div class="form-row">
+        <input type="text" id="nome" placeholder="Nome do Personagem">
+        <input type="text" id="classe" placeholder="Classe">
+        <input type="text" id="raca" placeholder="Raça">
+        <input type="number" id="nivel" placeholder="Nível">
+    </div>
+
+    <div class="form-row">
+        <div class="input-file-wrapper">
+            <span>📸 Foto:</span>
+            <input type="file" id="foto" accept="image/*">
+        </div>
+        <input type="number" id="vida" placeholder="Vida Inicial">
+        <input type="number" id="iniciativa" placeholder="Iniciativa">
+        <button onclick="adicionarPersonagem()" class="btn-adicionar">Adicionar à Batalha</button>
+    </div>
+    </div>
+</div>
+
+  <h2 id="round">Round: 1</h2>
+  <button onclick="passarTurno()" style="background: #28a745;">⚔️ Passar Turno</button>
+  <button onclick="organizarPorIniciativa()">Organizar Ordem</button>
+  <button onclick="mostrarRanking()">Ver Ranking</button>
+  <button onclick="resetarTudo()">Apagar tudo</button>
+  <button onclick="resetarStats()">Resetar Stats</button>
+
+  <div id="lista"></div>
+
+  <div id="ranking" class="ranking-container">
+    <h2>🏆 Ranking de Combate</h2>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

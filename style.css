@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f1f);
+  color: white;
+  padding: 20px;
+}
+
+/* TITULO */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.header-container {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: stretch; 
+}
+
+.form-row input[type="text"], 
+.form-row input[type="number"] {
+    flex: 1; 
+    min-width: 120px;
+    background: #16162a;
+    border: 1px solid #333;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#nome {
+    flex: 2;
+}
+
+.input-file-wrapper {
+    flex: 1.5;
+    background: #16162a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.input-file-wrapper input {
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-adicionar {
+    flex: 1;
+    min-width: 180px;
+    margin: 0; 
+    height: auto;
+    background: linear-gradient(135deg, #b80828, #e94560);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+}
+
+/* BOTÕES */
+button {
+  cursor: pointer;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #b80828, #b80828);
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+  margin: 5px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #af0303;
+}
+
+/* PERSONAGEM CARD */
+.personagem {
+  background: linear-gradient(145deg, #2b2b3c, #1c1c2b);
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: all 0.4s ease-in-out;
+}
+
+.header-personagem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  margin-bottom: 10px;
+}
+
+.badge-iniciativa {
+    background: #16162a;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Destaque do jogador do turno */
+.personagem.turno-ativo {
+    border: 2px solid #00ff88 !important; 
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    background: linear-gradient(145deg, #1e2b24, #131a16) !important;
+    transform: scale(1.02);
+}
+
+/* GRID DOS CARDS */
+.stats-grid {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.stat-box {
+  background: #161625;
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.valor {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 2px 0;
+}
+
+.stat-box input {
+  width: 50px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  text-align: center;
+}
+
+.ranking-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #2a2a40, #1a1a2e);
+  padding: 15px; 
+  margin-top: 12px;
+  border-radius: 12px;
+  transition: 0.2s;
+  min-height: 100px; 
+  position: relative; 
+  overflow: hidden; /
+}
+
+.ranking-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fundo-ranking.png'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18; 
+    filter: blur(5px); 
+    z-index: 0;
+}
+
+
+.info {
+  flex: 2; 
+  margin-left: 15px;
+  min-width: 200px; 
+  position: relative; 
+  z-index: 1;
+}
+
+.nome {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.subinfo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #8a8a9d; 
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.valor {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #00ff88; 
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+.label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #64647a;
+}
+
+.stats-ranking {
+  margin-top: 5px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap; 
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+input::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #4a4a61;
+}
+
+.stats-ranking span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #d1d1e0;
+}
+
+.score {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #f7b731;
+}
+
+/* POSIÇÃO */
+.rank {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  width: 80px;
+  flex-shrink: 0; 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #a0a0a0 100%);
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.4));
+  position: relative; 
+  z-index: 1;
+}
+
+.rank-1 { background-image: linear-gradient(to bottom, #fff 0%, gold 100%); }
+.rank-2 { background-image: linear-gradient(to bottom, #fff 10%, silver 100%); }
+.rank-3 { background-image: linear-gradient(to bottom, #fff8f0 10%, #cd7f32 100%); }
+
+/* FOTO */
+.foto-ranking {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #1f1f2f;
+  border: 2px solid #3a3a50;
+  flex-shrink: 0; 
+  position: relative;
+  z-index: 1;
+}
+
+/* BADGES */
+.badges-right {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0; 
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.badge-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #886e04, #ff8800);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(255,200,0,0.7);
+}
+
+.badge-circle small {
+  font-size: 9px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 800px) {
+    .ranking-card { flex-wrap: wrap; justify-content: center; }
+    .badges-right { width: 100%; justify-content: center; margin-top: 10px; }
+}
