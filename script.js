@@ -244,7 +244,7 @@ function gerarBadges(p, todos) {
   if (p.dano === maxDano && p.dano > 0) badges.push({ emoji: "⚔️", nome: "Combatente" });
   if (p.vida <= 5 && p.vida > 0) badges.push({ emoji: "🩸", nome: "No Limite" });
   if (p.vida <= 0) badges.push({ emoji: "🪦", nome: "Inconsciente" });
-  if (p.dano > (maxDano * 0.8) && p.recebido < 10) badges.push({ emoji: "🥷", nome: "Intocável" });
+  if (p.dano > 10 && p.recebido < 10) badges.push({ emoji: "🥷", nome: "Intocável" });
   if (p.dano === 0 && p.kills === 0 && p.cura === 0) badges.push({ emoji: "🕊️", nome: "Pacifista" });
   if (p.iniciativa >= 20) badges.push({ emoji: "⚡", nome: "Veloz" });
   if (p.iniciativa > 0 && p.iniciativa <= 3) badges.push({ emoji: "🐢", nome: "Lento" });
